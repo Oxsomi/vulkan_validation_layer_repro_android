@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="net.osomi.test"
+          android:versionCode="1"
+          android:versionName="0.1.0">
+
+  <uses-sdk android:minSdkVersion="33" />
+
+  <!-- Vulkan 1.2 + astc, sample rate shading, a few others -->
+
+  <uses-feature
+    android:name="android.hardware.vulkan.level"
+    android:version="1"
+    android:required="true" />
+
+  <uses-feature
+    android:name="android.hardware.vulkan.version"
+    android:version="0x402000"
+    android:required="true" />
+		  
+  <application
+    android:icon="@mipmap/ic_launcher"
+    android:label="Test app"
+	  android:debuggable="true"
+    android:testOnly="true"
+    android:hasCode="false"
+    android:resizeableActivity="true"
+	  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+	  android:appCategory="game">
+	  
+    <activity android:name="android.app.NativeActivity"
+	  			android:exported="true"
+            	android:configChanges="orientation|keyboardHidden|screenLayout|fontScale|locale">
+			  
+      <meta-data android:name="android.app.lib_name"
+                 android:value="app" />
+				 
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+	  
+    </activity>
+  </application>
+
+</manifest>
